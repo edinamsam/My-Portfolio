@@ -8,7 +8,7 @@ function Home() {
       transition={{ duration: 0.5 }}
     >
       <h1>Hi, I'm Samuel</h1>
-      <p>Frontend Developer builing clean and scalable interfaces.</p>
+      <p>Frontend Developer building clean and scalable interfaces.</p>
     </motion.section>
   );
 }

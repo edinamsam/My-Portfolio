@@ -1,16 +1,18 @@
 import { Outlet } from "react-router-dom";
-import Navbar from "..components/layout/Navbar";
-import Footer from "..components/layout/Footer";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 
 function MainLayout() {
   return (
-    <>
+    <div className="app">
       <Navbar />
-      <main style={{ padding: "2rem 4rem" }}>
-        <Outlet />
+      <main className="main">
+        <div className="container">
+          <Outlet />
+        </div>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
