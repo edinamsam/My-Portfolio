@@ -25,3 +25,11 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
 }
+
+.accent {
+    background: linear-gradient(90deg, var(--accent), #22d3ee);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
