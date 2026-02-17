@@ -390,6 +390,18 @@
 
 .contact-btn:hover {
     transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.error {
+    color: #ef4444;
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+}
+
+.form-group input.error-input,
+.form-group textarea.error-input {
+    border: 1px solid #ef4444;
 }
 
 .footer {
