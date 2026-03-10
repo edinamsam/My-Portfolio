@@ -25,5 +25,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Run Cypress tests
-        run: npx cypress run
+      - name: Start server and run Cypress
+        run: |
+          npm run dev &
+          npx wait-on http://localhost:5173
+          npx cypress run
