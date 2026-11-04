@@ -25,6 +25,14 @@ const projects = [
     stack: ["HTML", "CSS", "Flexbox"],
     link: "https://bank-landing-page-wheat.vercel.app/",
   },
+  {
+    id: 4,
+    title: "MERN Task Manager",
+    description:
+      "Responsive app allowing for creation, editing and deletion of daily tasks.",
+    stack: ["MongoDB, Express, React, Node JS"],
+    link: "https://mern-task-manager-eight-flax.vercel.app/",
+  },
 ];
 
 function Projects() {
