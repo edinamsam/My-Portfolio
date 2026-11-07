@@ -88,8 +88,10 @@ function Contact() {
             Let's <span className="accent">Connect</span>
           </h1>
           <p>
-            I'm open to frontend roles, collaborations and technical
-            discussions. Feel free to reach out.
+            I'm open to full-stack development opportunities, exciting
+            collaborations, and meaningful technical discussions. Whether it's
+            building innovative web solutions or solving challenging problems,
+            I'd love to connect. Feel free to reach out!
           </p>
         </div>
 
