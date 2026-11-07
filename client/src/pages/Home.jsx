@@ -10,7 +10,7 @@ function Home() {
       transition={{ duration: 0.5 }}
     >
       <div className="hero-content">
-        <p className="hero-tag">Frontend Developer</p>
+        <p className="hero-tag">Full Stack Developer</p>
 
         <h1>
           Building modern,
@@ -19,8 +19,10 @@ function Home() {
         </h1>
 
         <p className="hero-subtext">
-          I design and develop scalable React applications with clean
-          architecture, smooth interactions, and attention to detail.
+          I design and develop scalable full-stack applications, combining
+          intuitive React interfaces with robust backend systems, efficient
+          APIs, and database integration. I prioritize clean architecture,
+          seamless user experiences, and maintainable code.
         </p>
 
         <div className="hero-actions">
