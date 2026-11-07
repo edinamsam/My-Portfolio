@@ -1,3 +1,4 @@
+import { form } from "framer-motion/client";
 import { useState } from "react";
 
 function Contact() {
@@ -38,21 +39,45 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const addContact = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to create contact");
+      }
+
+      const data = await response.json();
+      console.log("Contact created:", data);
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.log("Error creating contact:", error.message);
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const validationErrors = validate();
+
     setErrors(validationErrors);
 
-    if (Object.keys(validationErrors).length === 0) {
-      console.log("Form submitted:", formData);
+    if (Object.keys(validationErrors).length > 0) {
+      return;
     }
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    await addContact();
   };
 
   return (

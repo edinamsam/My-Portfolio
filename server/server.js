@@ -1,3 +1,6 @@
+console.log("PORTFOLIO SERVER.JS IS RUNNING");
+console.log("Server file:", __filename);
+
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -12,17 +15,31 @@ app.get("/", (req, res) => {
   res.status(200).send("API is running");
 });
 
+app.get("/api/contacts", async (req, res) => {
+  try {
+    const contacts = await Contact.find();
+
+    res.status(200).json(contacts);
+  } catch (error) {
+    console.error("Failed to retrieve contacts:", error.message);
+
+    res.status(500).json({
+      message: "Unable to retrieve contacts",
+    });
+  }
+});
+
 app.post("/api/contacts", async (req, res) => {
   const { name, email, message } = req.body;
 
   try {
     const contact = await Contact.create({
-      name,
-      email,
-      message,
+      name: name,
+      email: email,
+      message: message,
     });
 
-    res.status(200).json(contact);
+    res.status(201).json(contact);
   } catch (error) {
     console.error("Contact creation failed:", error.message);
 
@@ -33,13 +50,16 @@ app.post("/api/contacts", async (req, res) => {
 });
 
 const startServer = async () => {
+  const PORT = process.env.PORT || 5000;
   try {
     await mongoose.connect(process.env.MONGO_URI);
 
     console.log("MongoDB connected");
 
-    app.listen(process.env.PORT, () => {
-      console.log("Server is running on port 5000");
+    console.log("Registering contacts route...");
+
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
     });
   } catch (error) {
     console.error("MongoDB connection failed:", error.message);
