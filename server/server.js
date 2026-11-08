@@ -8,7 +8,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://client-pied-nu-71.vercel.app",
+    origin: "https://client-dl8l8jd1x-eds-projects-2a7a6941.vercel.app",
     methods: ["GET", "POST"],
   }),
 );
