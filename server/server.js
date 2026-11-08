@@ -1,6 +1,3 @@
-console.log("PORTFOLIO SERVER.JS IS RUNNING");
-console.log("Server file:", __filename);
-
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -9,7 +6,12 @@ const Contact = require("./models/Contact.js");
 require("dotenv").config();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://client-pied-nu-71.vercel.app",
+    methods: ["GET", "POST"],
+  }),
+);
 
 app.get("/", (req, res) => {
   res.status(200).send("API is running");
